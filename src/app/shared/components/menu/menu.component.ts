@@ -30,4 +30,8 @@ export class MenuComponent {
   handleMenuVisible() {
     this.isMenuVisible = !this.isMenuVisible
   }
+
+  closeMenu() {
+    this.isMenuVisible = false
+  }
 }
