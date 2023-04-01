@@ -32,17 +32,6 @@ a {
   text-decoration: none;
 }
 
-//app-root {
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: space-between;
-//  height: 100%;
-//
-//  main {
-//    flex: 1 1 100%;
-//  }
-//}
-
 :root {
   --title-size: 2.4rem;
   --second-size: 2rem;
@@ -60,6 +49,9 @@ a {
   --main-bg: #171717;
   --white-bg: #FFFFFF;
   --footer-bg: #000000;
+
+  --black-border-color: #000000;
+  --black-border: 1px solid var(--black-border-color);
 }
 
 @media (max-width: 1024px) {

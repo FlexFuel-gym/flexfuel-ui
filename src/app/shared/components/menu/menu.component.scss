@@ -1,0 +1,52 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+
+  &-nav {
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__item {
+    }
+  }
+
+  &-image {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+  }
+}
+
+.item {
+  text-align: center;
+  padding: 3px 10px;
+  color: var(--black-color);
+  background-color: var(--button-white-bg);
+  border: var(--black-border);
+  transition: all .25s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--white-color);
+    background-color: var(--button-blue-bg);
+  }
+
+
+  &-text {
+    font-size: var(--default-size);
+    line-height: 1.15em;
+  }
+}
+
+.menu-image {
+}

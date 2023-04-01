@@ -12,6 +12,7 @@ import {HomeInfoComponent} from './pages/home-page/home-info/home-info.component
 import {HomeLocationComponent} from './pages/home-page/home-location/home-location.component';
 import {HomeHeroComponent} from './pages/home-page/home-hero/home-hero.component';
 import {ButtonComponent} from './shared/components/button/button.component';
+import {MenuComponent} from './shared/components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {ButtonComponent} from './shared/components/button/button.component';
     HomeLocationComponent,
     HomeHeroComponent,
     ButtonComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

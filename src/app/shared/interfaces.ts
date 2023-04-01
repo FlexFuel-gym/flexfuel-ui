@@ -16,6 +16,11 @@ export interface Product {
   price: number;
 }
 
+export interface RouterData {
+  name: string;
+  link: string;
+}
+
 export interface ButtonData {
   text: string;
   size: 'small' | 'medium' | 'huge',
