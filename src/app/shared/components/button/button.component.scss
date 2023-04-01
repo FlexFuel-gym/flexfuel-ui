@@ -1,0 +1,30 @@
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &-blue {
+    color: var(--button-white-color);
+    background-color: var(--button-blue-bg);
+    transition: all .25s ease-in-out;
+
+    &:hover {
+      color: var(--button-blue-bg);
+      background-color: var(--button-white-bg);
+    }
+  }
+
+  &-medium {
+    padding: 19px 50px;
+    font-size: var(--second-size);
+    line-height: 1.15em;
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    &-medium {
+      padding: 14px 30px;
+    }
+  }
+}

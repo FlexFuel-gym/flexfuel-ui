@@ -1,0 +1,42 @@
+.footer {
+  background-color: var(--footer-bg);
+
+  &-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
+
+  &-content {
+    &__title {
+      width: 170px;
+      padding-bottom: 25px;
+
+      &-img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  &-item {
+    &__link {
+      display: inline-block;
+      font-size: var(--default-size);
+      line-height: 1.15em;
+      color: var(--white-color);
+      transition: all .25s ease-in-out;
+      padding: 4px 0;
+
+      &:hover {
+        color: var(--blue-color);
+      }
+    }
+  }
+}
