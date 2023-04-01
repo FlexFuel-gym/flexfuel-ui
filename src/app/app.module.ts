@@ -13,6 +13,7 @@ import {HomeLocationComponent} from './pages/home-page/home-location/home-locati
 import {HomeHeroComponent} from './pages/home-page/home-hero/home-hero.component';
 import {ButtonComponent} from './shared/components/button/button.component';
 import {MenuComponent} from './shared/components/menu/menu.component';
+import {ClickOutsideDirective} from './shared/directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MenuComponent} from './shared/components/menu/menu.component';
     HomeHeroComponent,
     ButtonComponent,
     MenuComponent,
+    ClickOutsideDirective,
   ],
   imports: [
     BrowserModule,
