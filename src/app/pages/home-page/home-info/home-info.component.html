@@ -1,0 +1,19 @@
+<section class="info">
+  <div class="info-wrapper">
+    <div class="info-content">
+      <ul class="info-content-list achievements">
+        <li *ngFor="let achievement of achievements" class="achievements-item achievement">
+          <div class="achievement-content">
+            <div class="achievement-content__photo">
+              <img [src]="achievement.image" alt="achievement" class="achievement-content__photo-image">
+            </div>
+            <div class="achievement-content__text">
+              <h2 class="achievement-content__text-title">{{achievement.title}}</h2>
+              <p class="achievement-content__text-subtitle">{{achievement.description}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

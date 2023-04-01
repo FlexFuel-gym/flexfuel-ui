@@ -1,0 +1,30 @@
+.about-us {
+  &-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 20px 150px;
+  }
+
+  &-content {
+    &__title {
+      font-size: var(--title-size);
+      font-weight: 500;
+      color: var(--blue-color);
+      line-height: 1.15em;
+      padding-bottom: 25px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+
+      &-paragraph {
+        font-size: var(--default-size);
+        line-height: 1.15em;
+      }
+    }
+  }
+}

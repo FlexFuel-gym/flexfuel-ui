@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--white-color);
+  background-color: var(--main-bg);
+}
+
+app-home-page {
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+//app-root {
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: space-between;
+//  height: 100%;
+//
+//  main {
+//    flex: 1 1 100%;
+//  }
+//}
+
+:root {
+  --title-size: 2.4rem;
+  --second-size: 2rem;
+  --default-size: 1.6rem;
+
+  --blue-color: #089CF5;
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+
+  --button-black-color: #000000;
+  --button-white-color: #FFFFFF;
+  --button-blue-bg: #089CF5;
+  --button-white-bg: #FFFFFF;
+
+  --main-bg: #171717;
+  --white-bg: #FFFFFF;
+  --footer-bg: #000000;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --title-size: 2rem;
+    --second-size: 1.6rem;
+    --default-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --title-size: 1.8rem;
+    --second-size: 1.4rem;
+    --default-size: 1.1rem;
+  }
+}
