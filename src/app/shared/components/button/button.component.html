@@ -1,0 +1,6 @@
+<span [ngClass]="[
+  buttonData.type ? 'button-' + buttonData.type : '',
+  buttonData.size ? 'button-' + buttonData.size : ''
+]" class="button">
+  <span class="button-text">{{buttonData.text}}</span>
+</span>
