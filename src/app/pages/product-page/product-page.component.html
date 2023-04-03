@@ -1,0 +1,33 @@
+<main class="main">
+  <section class="product">
+    <div class="product-wrapper">
+      <div class="product-content">
+        <div class="product-content__images">
+          <img alt="product" class="product-content__images image" src="../../../assets/images/product.png">
+        </div>
+        <div class="product-content__info info">
+          <div class="info-content">
+            <div class="info-content__top">
+              <h1 class="info-content__top-title">Тренер</h1>
+              <p class="info-content__top-description">Тренер - це фахівець з високою кваліфікацією, який допомагає
+                людям досягнути своїх цілей у галузі фізичної підготовки та здорового способу життя. Він працює з
+                клієнтами різного віку та рівня фізичної підготовки та надає їм індивідуальний підхід до тренувань.
+                Тренер має широкі знання про фізіологію, харчування та різні види спорту. Він допомагає клієнтам
+                визначити свої цілі, розробляє для них індивідуальні тренувальні програми та мотивує до досягнення
+                поставлених завдань. Тренер також відповідає за безпеку під час тренувань та за дотримання вимог до
+                спортивного обладнання і приміщень. В державній службі тренер може виконувати різноманітні завдання,
+                пов'язані з розвитком спорту в країні, організацією та проведенням спортивних заходів, підготовкою
+                спортсменів до змагань на міжнародному рівні та іншими важливими функціями.</p>
+            </div>
+            <div class="info-content__bottom">
+              <span class="info-content__bottom-price">{{300 | currency:'USD':'$'}}</span>
+              <app-button (click)="onClick()" [buttonData]="buttonData"></app-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-buy-modal></app-buy-modal>

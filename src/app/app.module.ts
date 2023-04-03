@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {NgxSmartModalModule} from "ngx-smart-modal";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -14,6 +15,11 @@ import {HomeHeroComponent} from './pages/home-page/home-hero/home-hero.component
 import {ButtonComponent} from './shared/components/button/button.component';
 import {MenuComponent} from './shared/components/menu/menu.component';
 import {ClickOutsideDirective} from './shared/directives/click-outside.directive';
+import {ProductPageComponent} from './pages/product-page/product-page.component';
+import {BuyModalComponent} from './shared/components/modals/buy-modal/buy-modal.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgSelectModule} from "@ng-select/ng-select";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,12 +33,19 @@ import {ClickOutsideDirective} from './shared/directives/click-outside.directive
     HomeLocationComponent,
     HomeHeroComponent,
     ButtonComponent,
+    ProductPageComponent,
+    BuyModalComponent,
     MenuComponent,
     ClickOutsideDirective,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxSmartModalModule.forRoot(),
+    FormsModule,
+    NgSelectModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
