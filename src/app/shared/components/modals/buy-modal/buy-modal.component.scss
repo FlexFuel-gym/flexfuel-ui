@@ -1,0 +1,57 @@
+.modal {
+  &-content {
+    &__form {
+    }
+  }
+}
+
+
+.form {
+  &-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  &-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__info {
+      &-intro {
+        display: inline-block;
+        font-size: var(--small-size);
+        line-height: 1.15em;
+        color: var(--white-color);
+        padding-bottom: 5px;
+      }
+
+      &-price {
+        font-size: var(--default-size);
+        line-height: 1.15em;
+        color: var(--blue-color);
+      }
+    }
+  }
+}
+
+.label {
+  &-name {
+    display: block;
+    padding-bottom: 3px;
+    font-size: var(--small-size);
+  }
+
+  &-input {
+    all: inherit;
+    cursor: text;
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: var(--black-border);
+    background-color: var(--input-bg);
+  }
+}
+

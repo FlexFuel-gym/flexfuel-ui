@@ -14,7 +14,24 @@
     }
   }
 
+  &.disabled {
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  &-small {
+    padding: 12px 15px;
+    font-size: var(--small-size);
+    line-height: 1.15em;
+  }
+
   &-medium {
+    padding: 15px 34px;
+    font-size: var(--default-size);
+    line-height: 1.15em;
+  }
+
+  &-large {
     padding: 19px 50px;
     font-size: var(--second-size);
     line-height: 1.15em;
@@ -23,8 +40,16 @@
 
 @media (max-width: 768px) {
   .button {
+    &-small {
+      padding: 10px 13px;
+    }
+
     &-medium {
-      padding: 14px 30px;
+      padding: 13px 25px;
+    }
+
+    &-large {
+      padding: 16px 38px;
     }
   }
 }

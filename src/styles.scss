@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "ngx-smart-modal/ngx-smart-modal";
+@import "app/app.component";
 
 *, *::before, *::after {
   margin: 0;
@@ -32,25 +35,16 @@ a {
   text-decoration: none;
 }
 
-//app-root {
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: space-between;
-//  height: 100%;
-//
-//  main {
-//    flex: 1 1 100%;
-//  }
-//}
-
 :root {
   --title-size: 2.4rem;
   --second-size: 2rem;
   --default-size: 1.6rem;
+  --small-size: 1.4rem;
 
   --blue-color: #089CF5;
   --white-color: #FFFFFF;
   --black-color: #000000;
+  --error-color: #ff2121;
 
   --button-black-color: #000000;
   --button-white-color: #FFFFFF;
@@ -60,6 +54,13 @@ a {
   --main-bg: #171717;
   --white-bg: #FFFFFF;
   --footer-bg: #000000;
+  --modal-bg: #171717;
+  --input-bg: #242424;
+  --hover-select-bg: #414141;
+  --black-color-bg: #000000;
+
+  --black-border-color: #000000;
+  --black-border: 1px solid var(--black-border-color);
 }
 
 @media (max-width: 1024px) {
@@ -67,6 +68,7 @@ a {
     --title-size: 2rem;
     --second-size: 1.6rem;
     --default-size: 1.2rem;
+    --small-size: 1rem;
   }
 }
 
@@ -75,5 +77,73 @@ a {
     --title-size: 1.8rem;
     --second-size: 1.4rem;
     --default-size: 1.1rem;
+    --small-size: 0.9rem;
   }
 }
+
+/*** NGX-SMART-MODAL **/
+.nsm-content {
+  font-size: var(--small-size) !important;
+  background-color: var(--modal-bg);
+  padding: 30px;
+}
+
+/*** NGX-SMART-MODAL **/
+
+/*** NG-SELECT **/
+.ng-select-container,
+.ng-option {
+  background-color: var(--input-bg) !important;
+  border-radius: 0 !important;
+}
+
+.ng-select-container {
+  cursor: text !important;
+}
+
+.ng-input {
+  top: 50% !important;
+  transform: translateY(-50%);
+
+  input {
+    cursor: text !important;
+    color: var(--white-color) !important;
+  }
+}
+
+.ng-value-label,
+.ng-option-label {
+  color: var(--white-color);
+}
+
+.ng-option-marked {
+  background-color: var(--hover-select-bg) !important;
+}
+
+.ng-select-container,
+.ng-dropdown-panel.ng-select-bottom {
+  border-color: var(--black-border-color) !important;
+}
+
+/*** NG-SELECT **/
+
+
+/*** NGX-PAGINATION **/
+
+pagination-controls {
+  font-size: var(--default-size);
+  text-align: center;
+  line-height: 1.15em;
+}
+
+.ngx-pagination {
+  a, button {
+    color: var(--white-color) !important;
+
+    &:hover {
+      background-color: var(--black-color-bg) !important;
+    }
+  }
+}
+
+/*** NGX-PAGINATION **/

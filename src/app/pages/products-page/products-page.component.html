@@ -3,19 +3,20 @@
     <div class="shop-wrapper">
       <div class="shop-content">
         <h1 class="shop-content__title">Магазин</h1>
-        <ul class="shop-content__list products">
-          <li *ngFor="let product of products" class="products-item product">
+        <ul *ngIf="products.length > 0" class="shop-content__list products">
+          <li *ngFor="let product of products | paginate:pagination" class="products-item product">
             <div class="product-content">
-              <a [routerLink]="'/just-placeholder'" class="product-content__photo">
-                <img [src]="product.image" alt="product" class="product-content__photo-image">
+              <a [routerLink]="'/products/' + product.id" class="product-content__photo">
+                <img [src]="product.images[0]" alt="product" class="product-content__photo-image">
               </a>
               <div class="product-content__info">
-                <a [routerLink]="'/just-placeholder'" class="product-content__info-name">{{product.title}}</a>
+                <a [routerLink]="'/products/' + product.id" class="product-content__info-name">{{product.name}}</a>
                 <span class="product-content__info-price">{{product.price | currency:'USD'}}</span>
               </div>
             </div>
           </li>
         </ul>
+        <pagination-controls (pageChange)="onPageChange($event)" *ngIf="products.length > 0"></pagination-controls>
       </div>
     </div>
   </section>

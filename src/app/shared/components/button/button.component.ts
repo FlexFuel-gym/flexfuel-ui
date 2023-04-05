@@ -8,4 +8,5 @@ import {ButtonData} from "../../interfaces";
 })
 export class ButtonComponent {
   @Input() buttonData: ButtonData;
+  @Input() disabled?: boolean;
 }
