@@ -35,7 +35,13 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "prod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.qa.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -50,7 +56,7 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
+            "dev": {
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -59,16 +65,16 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "prod"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "flexfuel-ui:build:production"
+            "prod": {
+              "browserTarget": "flexfuel-ui:build:prod"
             },
-            "development": {
-              "browserTarget": "flexfuel-ui:build:development"
+            "dev": {
+              "browserTarget": "flexfuel-ui:build:dev"
             }
           },
           "defaultConfiguration": "development"

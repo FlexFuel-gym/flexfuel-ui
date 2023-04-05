@@ -19,8 +19,9 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     size: 'medium'
   }
   productData: Product;
+  productId: string;
+
   private paramsSub: Subscription;
-  private productId: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,

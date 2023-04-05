@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {BuyProduct, CustomerData, ProductResponse, ProductsResponse, Response} from "../interfaces";
+import {EnvironmentService} from "./environment.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,11 @@ import {BuyProduct, CustomerData, ProductResponse, ProductsResponse, Response} f
 export class ProductsService {
   private readonly COUNT_ITEMS_PER_PAGE: number = 12;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private environmentService: EnvironmentService) {
   }
 
   getProduct(productId: string): Observable<Response<ProductResponse>> {
-    return this.http.get<Response<ProductResponse>>('http://localhost:10000/api/product/product', {
+    return this.http.get<Response<ProductResponse>>(`${this.environmentService.environment.apiUrl}/product/product`, {
       params: {
         'product-id': productId
       }
@@ -21,7 +22,7 @@ export class ProductsService {
   }
 
   getProducts(page: number, count: number = this.COUNT_ITEMS_PER_PAGE): Observable<Response<ProductsResponse>> {
-    return this.http.get<Response<ProductsResponse>>('http://localhost:10000/api/product/products', {
+    return this.http.get<Response<ProductsResponse>>(`${this.environmentService.environment.apiUrl}/product/products`, {
       params: {
         page,
         count
@@ -30,7 +31,7 @@ export class ProductsService {
   }
 
   buyProduct(productId: string, customerData: CustomerData): Observable<Response<BuyProduct>> {
-    return this.http.post<Response<BuyProduct>>('http://localhost:10000/api/product/buy-product', {
+    return this.http.post<Response<BuyProduct>>(`${this.environmentService.environment.apiUrl}/product/buy-product`, {
       productId,
       customerData
     })
