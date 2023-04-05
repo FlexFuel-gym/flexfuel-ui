@@ -1,8 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ButtonData, CityInfo, DeliveryCompany, Department} from "../../../interfaces";
+import {
+  ButtonData,
+  BuyProduct,
+  CityInfo,
+  CustomerData,
+  DeliveryCompany,
+  Department,
+  Response
+} from "../../../interfaces";
 import {NovaPoshtaService} from "../../../services/nova-poshta.service";
 import {DELIVERY_COMPANIES} from "../../../enums";
+import {ProductsService} from "../../../services/products.service";
 
 @Component({
   selector: 'app-buy-modal',
@@ -10,8 +19,10 @@ import {DELIVERY_COMPANIES} from "../../../enums";
   styleUrls: ['./buy-modal.component.scss']
 })
 export class BuyModalComponent implements OnInit {
-  deliveryForm: FormGroup;
+  @Input() productId: string;
+  @Output() onOrder = new EventEmitter()
 
+  deliveryForm: FormGroup;
   deliveryAddresses: CityInfo[];
   deliveryDepartments: Department[];
   deliveryCompanies: DeliveryCompany[] = [
@@ -27,7 +38,10 @@ export class BuyModalComponent implements OnInit {
     type: 'blue'
   };
 
-  constructor(private novaPoshtaService: NovaPoshtaService) {
+  constructor(
+    private novaPoshtaService: NovaPoshtaService,
+    private productsService: ProductsService
+  ) {
   }
 
   ngOnInit() {
@@ -98,7 +112,7 @@ export class BuyModalComponent implements OnInit {
 
     const {fullName, phoneNumber, deliveryCompany, deliveryWarehouseId} = this.deliveryForm.value;
 
-    const data = {
+    const customerData: CustomerData = {
       fullName,
       phoneNumber,
       deliveryCompany,
@@ -106,6 +120,10 @@ export class BuyModalComponent implements OnInit {
       deliveryWarehouse: deliveryWarehouseId.split('/')[1]
     }
 
-    console.log(data)
+    this.productsService.buyProduct(this.productId, customerData).subscribe({
+      next: (response: Response<BuyProduct>) => {
+        this.onOrder.emit(response.data)
+      }
+    })
   }
 }

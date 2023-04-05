@@ -11,6 +11,11 @@ export interface NovaPoshtaResponse<T> {
   infoCodes: any[];
 }
 
+export interface Response<T> {
+  data: T;
+  success: boolean;
+}
+
 /** Interfaces */
 export interface Achievement {
   image: string;
@@ -25,9 +30,46 @@ export interface Exercises {
 }
 
 export interface Product {
-  image: string;
-  title: string;
+  id?: string;
+  name: string;
+  description: string;
+  images: string[];
   price: number;
+}
+
+export interface Pagination {
+  currentPage: number;
+  itemsPerPage: number;
+  totalItems: number;
+}
+
+export interface ProductResponse {
+  product: Product;
+}
+
+export interface ProductsResponse {
+  products: Product[];
+  pagination: Pagination;
+}
+
+export interface BuyProduct {
+  customer: CustomerData;
+  order: Order;
+}
+
+export interface CustomerData {
+  id?: string;
+  fullName: string;
+  phoneNumber: string;
+  deliveryCompany: string;
+  deliveryCityRef: string;
+  deliveryWarehouse: string;
+}
+
+export interface Order {
+  id: string;
+  productId: string;
+  customerId: string;
 }
 
 export interface DeliveryCompany {

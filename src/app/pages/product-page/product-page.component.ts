@@ -1,10 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Params} from "@angular/router";
 import {Subscription} from "rxjs";
-import {ButtonData} from "../../shared/interfaces";
 import {NgxSmartModalService} from "ngx-smart-modal";
+import {Response, ButtonData, ProductResponse, Product} from "../../shared/interfaces";
 import {MODALS} from "../../shared/enums";
 import {BuyModalComponent} from "../../shared/components/modals/buy-modal/buy-modal.component";
+import {ProductsService} from "../../shared/services/products.service";
 
 @Component({
   selector: 'app-product-page',
@@ -17,21 +18,27 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     type: 'blue',
     size: 'medium'
   }
-
+  productData: Product;
   private paramsSub: Subscription;
   private productId: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private ngxSmartModalService: NgxSmartModalService
+    private ngxSmartModalService: NgxSmartModalService,
+    private productsService: ProductsService
   ) {
   }
 
   ngOnInit() {
     this.paramsSub = this.activatedRoute.params.subscribe({
-      next: (params) => {
+      next: (params: Params) => {
         this.productId = params['id']
-        console.log(this.productId)
+
+        this.productsService.getProduct(this.productId).subscribe({
+          next: (response: Response<ProductResponse>) => {
+            this.productData = response.data.product
+          }
+        })
       }
     })
   }

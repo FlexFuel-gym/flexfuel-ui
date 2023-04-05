@@ -57,6 +57,7 @@ a {
   --modal-bg: #171717;
   --input-bg: #242424;
   --hover-select-bg: #414141;
+  --black-color-bg: #000000;
 
   --black-border-color: #000000;
   --black-border: 1px solid var(--black-border-color);
@@ -125,3 +126,24 @@ a {
 }
 
 /*** NG-SELECT **/
+
+
+/*** NGX-PAGINATION **/
+
+pagination-controls {
+  font-size: var(--default-size);
+  text-align: center;
+  line-height: 1.15em;
+}
+
+.ngx-pagination {
+  a, button {
+    color: var(--white-color) !important;
+
+    &:hover {
+      background-color: var(--black-color-bg) !important;
+    }
+  }
+}
+
+/*** NGX-PAGINATION **/
