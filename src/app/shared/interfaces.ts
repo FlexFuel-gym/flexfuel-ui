@@ -88,6 +88,11 @@ export interface ButtonData {
   type: 'blue',
 }
 
+export interface Environment {
+  production: boolean;
+  apiUrl: string;
+}
+
 /** Nova Poshta */
 export interface CityInfo {
   Ref: string;
