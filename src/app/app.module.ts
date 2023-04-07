@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {NgSelectModule} from "@ng-select/ng-select";
 import {NgxSmartModalModule} from "ngx-smart-modal";
 import {NgxPaginationModule} from "ngx-pagination";
@@ -20,7 +20,9 @@ import {FooterComponent} from './shared/components/footer/footer.component';
 import {ButtonComponent} from './shared/components/button/button.component';
 import {MenuComponent} from './shared/components/menu/menu.component';
 import {BuyModalComponent} from './shared/components/modals/buy-modal/buy-modal.component';
+import {LoaderComponent} from './shared/components/loader/loader.component';
 import {ClickOutsideDirective} from './shared/directives/click-outside.directive';
+import {LoadingInterceptor} from "./shared/interceptors/loading.interceptor";
 import {CoachesPageComponent} from './pages/coaches-page/coaches-page.component';
 import {CoachSchedulePipe} from './shared/pipes/coach-schedule.pipe';
 import {CoachModalComponent} from './shared/components/modals/coach-modal/coach-modal.component';
@@ -41,6 +43,7 @@ import {CoachModalComponent} from './shared/components/modals/coach-modal/coach-
     BuyModalComponent,
     MenuComponent,
     ClickOutsideDirective,
+    LoaderComponent,
     CoachesPageComponent,
     CoachSchedulePipe,
     CoachModalComponent,
@@ -55,7 +58,9 @@ import {CoachModalComponent} from './shared/components/modals/coach-modal/coach-
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
