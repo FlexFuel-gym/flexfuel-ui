@@ -5,17 +5,8 @@
         <img alt="logo" class="footer-content__title-img" src="../../../../assets/images/logo.svg">
       </h2>
       <ul class="footer-content__menu menu">
-        <li class="menu-item">
-          <a [routerLink]="''" class="menu-item__link">Головна</a>
-        </li>
-        <li class="menu-item">
-          <a [routerLink]="'exercises'" class="menu-item__link">Тренувальні вправи</a>
-        </li>
-        <li class="menu-item">
-          <a [routerLink]="'products'" class="menu-item__link">Магазин</a>
-        </li>
-        <li class="menu-item">
-          <a [routerLink]="'about-us'" class="menu-item__link">Про нас</a>
+        <li *ngFor="let route of routerData" class="menu-item">
+          <a [routerLink]="route.link" class="menu-item__link">{{route.name}}</a>
         </li>
       </ul>
     </div>

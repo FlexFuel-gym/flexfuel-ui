@@ -34,4 +34,9 @@ export class MenuComponent {
   closeMenu() {
     this.isMenuVisible = false
   }
+
+  closeMenuAndScrollTop() {
+    this.closeMenu()
+    scroll({top: 0})
+  }
 }

@@ -1,7 +1,8 @@
 <div (clickOutside)="closeMenu()" class="menu">
   <nav *ngIf="isMenuVisible" class="menu-nav">
     <ul class="menu-list">
-      <li *ngFor="let data of routerData" [routerLink]="data.link" class="menu-list__item item">
+      <li (click)="closeMenuAndScrollTop()" *ngFor="let data of routerData" [routerLink]="data.link"
+          class="menu-list__item item">
         <span class="item-text">{{data.name}}</span>
       </li>
     </ul>
