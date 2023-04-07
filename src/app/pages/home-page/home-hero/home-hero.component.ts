@@ -8,7 +8,7 @@ import {ButtonData} from "../../../shared/interfaces";
 })
 export class HomeHeroComponent {
   buttonData: ButtonData = {
-    text: 'Записатись',
+    text: 'Обрати тренера',
     size: 'large',
     type: 'blue'
   }

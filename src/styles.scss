@@ -2,6 +2,7 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import "ngx-smart-modal/ngx-smart-modal";
 @import "app/app.component";
+@import "mixins";
 
 *, *::before, *::after {
   margin: 0;
@@ -23,8 +24,25 @@ body {
   background-color: var(--main-bg);
 }
 
-app-home-page {
+app-root {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   height: 100%;
+}
+
+.validation-error {
+  font-size: var(--small-size);
+  color: var(--error-color);
+}
+
+app-about-us-page,
+app-exercises-page,
+app-coaches-page,
+app-product-page,
+app-products-page,
+app-home-page {
+  flex: 1 1 100%;
 }
 
 ul {
@@ -123,6 +141,22 @@ a {
 .ng-select-container,
 .ng-dropdown-panel.ng-select-bottom {
   border-color: var(--black-border-color) !important;
+}
+
+.ng-option {
+  position: relative;
+}
+
+.ng-option-disabled::before {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  background-image: url("./assets/icons/lock-icon.png");
+  background-size: 15px 15px;
+  width: 15px;
+  height: 15px;
 }
 
 /*** NG-SELECT **/

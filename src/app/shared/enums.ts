@@ -1,5 +1,6 @@
 export enum MODALS {
-  BUY = 'buyModal'
+  BUY = 'buyModal',
+  COACH = 'coachModal'
 }
 
 export enum DELIVERY_COMPANIES {

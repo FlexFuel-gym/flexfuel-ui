@@ -14,6 +14,18 @@
     }
   }
 
+  &-blue-with-border {
+    color: var(--button-white-color);
+    background-color: var(--button-blue-bg);
+    transition: all .25s ease-in-out;
+
+    &:hover {
+      color: var(--button-blue-bg);
+      background-color: var(--button-white-bg);
+      outline: var(--black-border);
+    }
+  }
+
   &.disabled {
     opacity: 0.75;
     pointer-events: none;
@@ -35,6 +47,13 @@
     padding: 19px 50px;
     font-size: var(--second-size);
     line-height: 1.15em;
+  }
+
+  &-wide {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: var(--default-size);
   }
 }
 

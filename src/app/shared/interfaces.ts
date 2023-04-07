@@ -84,13 +84,31 @@ export interface RouterData {
 
 export interface ButtonData {
   text: string;
-  size: 'small' | 'medium' | 'large',
-  type: 'blue',
+  size: 'small' | 'medium' | 'large' | 'wide',
+  type: 'blue' | 'blue-with-border',
 }
 
 export interface Environment {
   production: boolean;
   apiUrl: string;
+}
+
+export interface CoachResponse {
+  coaches: CoachData[]
+}
+
+export interface CoachData {
+  id: string;
+  image: string;
+  fullName: string;
+  description: string;
+  pricePerMonth: number;
+  schedule: CoachSchedule[];
+}
+
+export interface CoachSchedule {
+  periodOfTime: string;
+  isAvailable: boolean;
 }
 
 /** Nova Poshta */

@@ -18,6 +18,10 @@ export class MenuComponent {
       link: 'exercises'
     },
     {
+      name: 'Тренери',
+      link: 'coaches'
+    },
+    {
       name: 'Магазин',
       link: 'products'
     },
