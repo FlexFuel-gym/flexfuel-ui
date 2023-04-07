@@ -1,0 +1,67 @@
+@import '../../../../../mixins';
+
+.modal {
+  &-content {
+    display: flex;
+    justify-content: space-between;
+
+    &__image {
+      flex: 0 0 48%;
+
+      &-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      flex: 0 0 48%;
+
+      &-form {
+        width: 100%;
+      }
+
+      &-price {
+        font-size: var(--small-size);
+        line-height: 1.15em;
+        color: var(--white-color);
+        padding-bottom: 15px;
+
+        &-selected {
+          color: #089CF5;
+        }
+      }
+    }
+  }
+}
+
+.form {
+  &-content {
+    &__name {
+      font-weight: 500;
+      font-size: var(--second-size);
+      line-height: 1.15em;
+      color: var(--blue-color);
+      padding-bottom: 10px;
+    }
+
+    &__label {
+    }
+  }
+}
+
+.label {
+  @include label;
+  display: block;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 425px) {
+  .modal {
+    &-content {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

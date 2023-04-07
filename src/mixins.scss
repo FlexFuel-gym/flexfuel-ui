@@ -1,0 +1,17 @@
+@mixin label {
+  &-name {
+    display: block;
+    padding-bottom: 3px;
+    font-size: var(--small-size);
+  }
+
+  &-input {
+    all: inherit;
+    cursor: text;
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: var(--black-border);
+    background-color: var(--input-bg);
+  }
+}

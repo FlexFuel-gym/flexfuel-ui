@@ -21,6 +21,9 @@ import {ButtonComponent} from './shared/components/button/button.component';
 import {MenuComponent} from './shared/components/menu/menu.component';
 import {BuyModalComponent} from './shared/components/modals/buy-modal/buy-modal.component';
 import {ClickOutsideDirective} from './shared/directives/click-outside.directive';
+import {CoachesPageComponent} from './pages/coaches-page/coaches-page.component';
+import {CoachSchedulePipe} from './shared/pipes/coach-schedule.pipe';
+import {CoachModalComponent} from './shared/components/modals/coach-modal/coach-modal.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import {ClickOutsideDirective} from './shared/directives/click-outside.directive
     BuyModalComponent,
     MenuComponent,
     ClickOutsideDirective,
+    CoachesPageComponent,
+    CoachSchedulePipe,
+    CoachModalComponent,
   ],
   imports: [
     BrowserModule,
