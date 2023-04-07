@@ -18,6 +18,10 @@ export class MenuComponent {
       link: 'exercises'
     },
     {
+      name: 'Тренери',
+      link: 'coaches'
+    },
+    {
       name: 'Магазин',
       link: 'products'
     },
@@ -33,5 +37,10 @@ export class MenuComponent {
 
   closeMenu() {
     this.isMenuVisible = false
+  }
+
+  closeMenuAndScrollTop() {
+    this.closeMenu()
+    scroll({top: 0})
   }
 }
