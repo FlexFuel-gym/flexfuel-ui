@@ -61,7 +61,7 @@
         <div class="form-bottom">
           <div class="form-bottom__info">
             <span class="form-bottom__info-intro">До сплати (післяплата):</span>
-            <p class="form-bottom__info-price">{{300 | currency:'USD':'$'}}</p>
+            <p class="form-bottom__info-price">{{productData.price | currency:'USD':'$'}}</p>
           </div>
           <app-button
             (click)="onSubmit()"

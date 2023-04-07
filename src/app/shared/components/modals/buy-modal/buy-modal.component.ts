@@ -6,7 +6,7 @@ import {
   CityInfo,
   CustomerData,
   DeliveryCompany,
-  Department,
+  Department, Product,
   Response
 } from "../../../interfaces";
 import {NovaPoshtaService} from "../../../services/nova-poshta.service";
@@ -19,7 +19,7 @@ import {ProductsService} from "../../../services/products.service";
   styleUrls: ['./buy-modal.component.scss']
 })
 export class BuyModalComponent implements OnInit {
-  @Input() productId: string;
+  @Input() productData: Product;
   @Output() onOrder = new EventEmitter()
 
   deliveryForm: FormGroup;
@@ -120,7 +120,7 @@ export class BuyModalComponent implements OnInit {
       deliveryWarehouse: deliveryWarehouseId.split('/')[1]
     }
 
-    this.productsService.buyProduct(this.productId, customerData).subscribe({
+    this.productsService.buyProduct(this.productData.id!, customerData).subscribe({
       next: (response: Response<BuyProduct>) => {
         this.onOrder.emit(response.data)
       }
