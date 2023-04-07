@@ -17,6 +17,10 @@ export class FooterComponent {
       link: 'exercises'
     },
     {
+      name: 'Тренери',
+      link: 'coaches'
+    },
+    {
       name: 'Магазин',
       link: 'products'
     },
