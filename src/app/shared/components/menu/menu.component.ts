@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {RouterData} from "../../interfaces";
+import { Component } from '@angular/core';
+import { RouterData } from '../../../core/interfaces';
 
 @Component({
   selector: 'app-menu',
@@ -7,8 +7,8 @@ import {RouterData} from "../../interfaces";
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
-  isMenuVisible: boolean = false;
-  routerData: RouterData[] = [
+  public isMenuVisible: boolean = false;
+  public routerData: RouterData[] = [
     {
       name: 'Головна',
       link: ''
@@ -28,19 +28,19 @@ export class MenuComponent {
     {
       name: 'Про нас',
       link: 'about-us'
-    },
-  ]
+    }
+  ];
 
-  handleMenuVisible() {
-    this.isMenuVisible = !this.isMenuVisible
+  public handleMenuVisible() {
+    this.isMenuVisible = !this.isMenuVisible;
   }
 
-  closeMenu() {
-    this.isMenuVisible = false
+  public closeMenu() {
+    this.isMenuVisible = false;
   }
 
-  closeMenuAndScrollTop() {
-    this.closeMenu()
-    scroll({top: 0})
+  public closeMenuAndScrollTop() {
+    this.closeMenu();
+    scroll({ top: 0 });
   }
 }

@@ -1,53 +1,53 @@
-<ngx-smart-modal identifier="coachModal">
-  <div class="modal">
-    <div *ngIf="coachData" class="modal-content">
-      <div class="modal-content__image">
-        <img [src]="coachData.image" alt="coach" class="modal-content__image-img">
+<ngx-smart-modal identifier='coachModal'>
+  <div class='modal'>
+    <div *ngIf='coachData' class='modal-content'>
+      <div class='modal-content__image'>
+        <img [src]='coachData.image' alt='coach' class='modal-content__image-img'>
       </div>
-      <div class="modal-content__info">
-        <form [formGroup]="coachForm" class="modal-content__info-form form">
-          <div class="form-content">
-            <h3 class="form-content__name">{{coachData.fullName}}</h3>
-            <label class="form-content__label label">
-              <span class="label-name">Повне ім’я:</span>
-              <input [formControlName]="'fullName'" [placeholder]="'ПІБ'" class="label-input" type="text"/>
+      <div class='modal-content__info'>
+        <form [formGroup]='coachForm' class='modal-content__info-form form'>
+          <div class='form-content'>
+            <h3 class='form-content__name'>{{coachData.fullName}}</h3>
+            <label class='form-content__label label'>
+              <span class='label-name'>Повне ім’я:</span>
+              <input [formControlName]="'fullName'" [placeholder]="'ПІБ'" class='label-input' type='text' />
               <span
                 *ngIf="coachForm.controls['fullName'].errors?.['required'] && coachForm.controls['fullName'].touched"
-                class="validation-error">Поле обов'язкове</span>
+                class='validation-error'>Поле обов'язкове</span>
             </label>
-            <label class="form-content__label label">
-              <span class="label-name">Номер телефону:</span>
-              <input [formControlName]="'phoneNumber'" [placeholder]="'Номер телефону'" class="label-input"
-                     type="text"/>
+            <label class='form-content__label label'>
+              <span class='label-name'>Номер телефону:</span>
+              <input [formControlName]="'phoneNumber'" [placeholder]="'Номер телефону'" class='label-input'
+                     type='text' />
               <span
                 *ngIf="coachForm.controls['phoneNumber'].errors?.['required'] && coachForm.controls['phoneNumber'].touched"
-                class="validation-error">Поле обов'язкове</span>
+                class='validation-error'>Поле обов'язкове</span>
             </label>
-            <label class="form-content__label label">
-              <span class="label-name">Оберіть зручний час:</span>
+            <label class='form-content__label label'>
+              <span class='label-name'>Оберіть зручний час:</span>
               <ng-select [formControlName]="'schedule'" [placeholder]="'Час'">
                 <ng-option
-                  *ngFor="let schedule of coachData.schedule"
-                  [disabled]="!schedule.isAvailable" [value]="schedule.periodOfTime">
+                  *ngFor='let schedule of coachData.schedule'
+                  [disabled]='!schedule.isAvailable' [value]='schedule.periodOfTime'>
                   {{schedule.periodOfTime}}
                 </ng-option>
               </ng-select>
               <span
                 *ngIf="coachForm.controls['schedule'].errors?.['required'] && coachForm.controls['schedule'].touched"
-                class="validation-error">Поле обов'язкове</span>
+                class='validation-error'>Поле обов'язкове</span>
             </label>
           </div>
-          <p class="modal-content__info-price">
-            <span class="modal-content__info-price-selected">
+          <p class='modal-content__info-price'>
+            <span class='modal-content__info-price-selected'>
               {{coachData.pricePerMonth | currency:'USD':'$'}}
             </span>
             / місяць
           </p>
           <app-button
-            (click)="onSubmit()"
-            [attr.aria-disabled]="coachForm.invalid"
-            [buttonData]="buttonData"
-            [disabled]="coachForm.invalid">
+            (click)='onSubmit()'
+            [attr.aria-disabled]='coachForm.invalid'
+            [buttonData]='buttonData'
+            [disabled]='coachForm.invalid'>
           </app-button>
         </form>
       </div>

@@ -1,20 +1,20 @@
-<main class="main">
-  <section class="exercises">
-    <div class="exercises-wrapper">
-      <div class="exercises-content">
-        <h1 class="exercises-content__title">Тренувальні вправи</h1>
-        <ul class="exercises-content__list">
-          <li *ngFor="let exercise of exercises; let index = index" class="exercises-content__list-item exercise">
+<main class='main'>
+  <section class='exercises'>
+    <div class='exercises-wrapper'>
+      <div class='exercises-content'>
+        <h1 class='exercises-content__title'>Тренувальні вправи</h1>
+        <ul class='exercises-content__list'>
+          <li *ngFor='let exercise of exercises; let index = index' class='exercises-content__list-item exercise'>
             <div [ngClass]="[
               index % 2 ? 'reverse' : ''
-            ]" class="exercise-content">
-              <div class="exercise-content__example">
-                <img [src]="exercise.image" alt="exercise example"
-                     class="exercise-content__example-image">
+            ]" class='exercise-content'>
+              <div class='exercise-content__example'>
+                <img [src]='exercise.image' alt='exercise example'
+                     class='exercise-content__example-image'>
               </div>
-              <div class="exercise-content__text">
-                <h2 class="exercise-content__text-title">{{exercise.title}}</h2>
-                <p class="exercise-content__text-subtitle">{{exercise.description}}</p>
+              <div class='exercise-content__text'>
+                <h2 class='exercise-content__text-title'>{{exercise.title}}</h2>
+                <p class='exercise-content__text-subtitle'>{{exercise.description}}</p>
               </div>
             </div>
           </li>

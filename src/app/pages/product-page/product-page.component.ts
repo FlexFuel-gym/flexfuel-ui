@@ -1,11 +1,11 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from "@angular/router";
-import {Subscription} from "rxjs";
-import {NgxSmartModalService} from "ngx-smart-modal";
-import {Response, ButtonData, ProductResponse, Product} from "../../shared/interfaces";
-import {MODALS} from "../../shared/enums";
-import {BuyModalComponent} from "../../shared/components/modals/buy-modal/buy-modal.component";
-import {ProductsService} from "../../shared/services/products.service";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { NgxSmartModalService } from 'ngx-smart-modal';
+import { Response, ButtonData, ProductResponse, Product } from '../../core/interfaces';
+import { MODALS } from '../../core/enums';
+import { BuyModalComponent } from '../../shared/components/modals/buy-modal/buy-modal.component';
+import { ProductsService } from '../../core/services/products.service';
 
 @Component({
   selector: 'app-product-page',
@@ -13,13 +13,13 @@ import {ProductsService} from "../../shared/services/products.service";
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent implements OnInit, OnDestroy {
-  buttonData: ButtonData = {
+  public buttonData: ButtonData = {
     text: 'Замовити',
     type: 'blue',
     size: 'medium'
-  }
-  productData: Product;
-  productId: string;
+  };
+  public productData: Product;
+  public productId: string;
 
   private paramsSub: Subscription;
 
@@ -33,22 +33,22 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.paramsSub = this.activatedRoute.params.subscribe({
       next: (params: Params) => {
-        this.productId = params['id']
+        this.productId = params['id'];
 
         this.productsService.getProduct(this.productId).subscribe({
           next: (response: Response<ProductResponse>) => {
-            this.productData = response.data.product
+            this.productData = response.data.product;
           }
-        })
+        });
       }
-    })
+    });
   }
 
-  onClick() {
-    this.ngxSmartModalService.create(MODALS.BUY, BuyModalComponent).open()
+  public onClick() {
+    this.ngxSmartModalService.create(MODALS.BUY, BuyModalComponent).open();
   }
 
   ngOnDestroy() {
-    this.paramsSub.unsubscribe()
+    this.paramsSub.unsubscribe();
   }
 }
