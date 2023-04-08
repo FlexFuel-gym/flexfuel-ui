@@ -1,0 +1,11 @@
+name: build
+on:
+  pull_request:
+    branches:
+      - feature/**
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "npm run start:qa"
