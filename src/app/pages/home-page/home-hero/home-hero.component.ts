@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {ButtonData} from "../../../shared/interfaces";
+import { Component } from '@angular/core';
+import { ButtonData } from '../../../core/interfaces';
 
 @Component({
   selector: 'app-home-hero',
@@ -7,9 +7,9 @@ import {ButtonData} from "../../../shared/interfaces";
   styleUrls: ['./home-hero.component.scss']
 })
 export class HomeHeroComponent {
-  buttonData: ButtonData = {
+  public buttonData: ButtonData = {
     text: 'Обрати тренера',
     size: 'large',
     type: 'blue'
-  }
+  };
 }

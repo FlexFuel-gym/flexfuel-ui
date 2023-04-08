@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-location.component.scss']
 })
 export class HomeLocationComponent {
-
 }

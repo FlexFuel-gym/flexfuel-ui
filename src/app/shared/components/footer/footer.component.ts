@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {RouterData} from "../../interfaces";
+import { Component } from '@angular/core';
+import { RouterData } from '../../../core/interfaces';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +7,7 @@ import {RouterData} from "../../interfaces";
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  routerData: RouterData[] = [
+  public routerData: RouterData[] = [
     {
       name: 'Головна',
       link: ''
@@ -27,10 +27,10 @@ export class FooterComponent {
     {
       name: 'Про нас',
       link: 'about-us'
-    },
-  ]
+    }
+  ];
 
-  scrollTop() {
-    scroll({top: 0})
+  public scrollTop() {
+    scroll({ top: 0 });
   }
 }

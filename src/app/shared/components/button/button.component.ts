@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {ButtonData} from "../../interfaces";
+import { Component, Input } from '@angular/core';
+import { ButtonData } from '../../../core/interfaces';
 
 @Component({
   selector: 'app-button',
@@ -7,6 +7,6 @@ import {ButtonData} from "../../interfaces";
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  @Input() buttonData: ButtonData;
-  @Input() disabled?: boolean;
+  @Input() public buttonData: ButtonData;
+  @Input() public disabled?: boolean;
 }

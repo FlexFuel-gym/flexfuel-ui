@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Achievement} from "../../../shared/interfaces";
+import { Component } from '@angular/core';
+import { Achievement } from '../../../core/interfaces';
 
 @Component({
   selector: 'app-home-info',
@@ -7,7 +7,7 @@ import {Achievement} from "../../../shared/interfaces";
   styleUrls: ['./home-info.component.scss']
 })
 export class HomeInfoComponent {
-  achievements: Achievement[] = [
+  public achievements: Achievement[] = [
     {
       image: '../../../../assets/images/people.png',
       title: 'Кількість клієнтів',
@@ -22,6 +22,6 @@ export class HomeInfoComponent {
       image: '../../../../assets/images/cup.png',
       title: 'Наші досягнення',
       description: 'Ми - переможці різноманітних змагань і турнірів, проведених в галузі фітнесу. Ми виграли нагороди за кращий спортзал року, кращий тренажерний зал та кращого тренера року у Вінниці.'
-    },
-  ]
+    }
+  ];
 }
