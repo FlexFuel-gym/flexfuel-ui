@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ButtonData, CoachData } from '../../../../core/interfaces';
+import { CoachesService } from '../../../../core/services/coaches.service';
 
 @Component({
   selector: 'app-coach-modal',
@@ -16,6 +17,9 @@ export class CoachModalComponent implements OnInit, OnChanges {
     type: 'blue'
   };
 
+  constructor(private coachesService: CoachesService) {
+  }
+
   ngOnInit() {
     this.coachForm = new FormGroup<any>({
       fullName: new FormControl(undefined, [
@@ -24,14 +28,14 @@ export class CoachModalComponent implements OnInit, OnChanges {
       phoneNumber: new FormControl(undefined, [
         Validators.required
       ]),
-      schedule: new FormControl(undefined, [
+      periodOfTime: new FormControl(undefined, [
         Validators.required
       ])
     });
   }
 
   ngOnChanges() {
-    this.coachForm?.get('schedule')?.reset();
+    this.coachForm?.get('periodOfTime')?.reset();
   }
 
   public onSubmit() {
@@ -39,6 +43,6 @@ export class CoachModalComponent implements OnInit, OnChanges {
       return;
     }
 
-    console.log(this.coachForm.value);
+    this.coachesService.registerToCoach(this.coachData.id, this.coachForm.value);
   }
 }

@@ -24,8 +24,8 @@
                 class='validation-error'>Поле обов'язкове</span>
             </label>
             <label class='form-content__label label'>
-              <span class='label-name'>Оберіть зручний час:</span>
-              <ng-select [formControlName]="'schedule'" [placeholder]="'Час'">
+              <span class='label-name'>Оберіть зручний час (на завтра):</span>
+              <ng-select [formControlName]="'periodOfTime'" [placeholder]="'Час'">
                 <ng-option
                   *ngFor='let schedule of coachData.schedule'
                   [disabled]='!schedule.isAvailable' [value]='schedule.periodOfTime'>
@@ -33,15 +33,15 @@
                 </ng-option>
               </ng-select>
               <span
-                *ngIf="coachForm.controls['schedule'].errors?.['required'] && coachForm.controls['schedule'].touched"
+                *ngIf="coachForm.controls['periodOfTime'].errors?.['required'] && coachForm.controls['periodOfTime'].touched"
                 class='validation-error'>Поле обов'язкове</span>
             </label>
           </div>
           <p class='modal-content__info-price'>
             <span class='modal-content__info-price-selected'>
-              {{coachData.pricePerMonth | currency:'USD':'$'}}
+              {{coachData.pricePerLesson | currency:'USD':'$'}}
             </span>
-            / місяць
+            / заняття
           </p>
           <app-button
             (click)='onSubmit()'

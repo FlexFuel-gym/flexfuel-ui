@@ -102,7 +102,7 @@ export interface CoachData {
   image: string;
   fullName: string;
   description: string;
-  pricePerMonth: number;
+  pricePerLesson: number;
   schedule: CoachSchedule[];
 }
 
@@ -263,4 +263,23 @@ export interface Address {
   ParentRegionCode: string;
   RegionTypes: string;
   RegionTypesCode: string;
+}
+
+export interface CoachOrderResponse {
+  id: string;
+  customerId: string;
+  coachId: string;
+}
+
+export interface CustomerOrderResponse {
+  id: string;
+  date: string;
+  fullName: string;
+  phoneNumber: string;
+  periodOfTime: string;
+}
+
+export interface RegisterToCoachResponse {
+  customer: CustomerOrderResponse;
+  order: CoachOrderResponse;
 }
