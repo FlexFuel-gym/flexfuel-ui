@@ -4,7 +4,7 @@ export interface NovaPoshtaResponse<T> {
   data: T;
   errors: any[];
   warnings: any[];
-  info: Info;
+  info: Info | [];
   messageCodes: any[];
   errorCodes: any[];
   warningCodes: any[];
@@ -91,6 +91,7 @@ export interface ButtonData {
 export interface Environment {
   production: boolean;
   apiUrl: string;
+  novaposhtaUrl: string;
 }
 
 export interface CoachResponse {
@@ -198,7 +199,7 @@ export interface Department {
 }
 
 export interface Info {
-  totalCount: number;
+  totalCount?: number;
 }
 
 export interface SendingLimitationsOnDimensions {

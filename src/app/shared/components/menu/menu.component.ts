@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterData } from '../../../core/interfaces';
+import { AdditionalService } from '../../../core/services/additional.service';
 
 @Component({
   selector: 'app-menu',
@@ -31,6 +32,9 @@ export class MenuComponent {
     }
   ];
 
+  constructor(private additionalService: AdditionalService) {
+  }
+
   public handleMenuVisible() {
     this.isMenuVisible = !this.isMenuVisible;
   }
@@ -41,6 +45,6 @@ export class MenuComponent {
 
   public closeMenuAndScrollTop() {
     this.closeMenu();
-    scroll({ top: 0 });
+    this.additionalService.scrollTop()
   }
 }

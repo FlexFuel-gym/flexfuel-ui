@@ -6,7 +6,7 @@
       </h2>
       <ul class='footer-content__menu menu'>
         <li *ngFor='let route of routerData' class='menu-item'>
-          <a [routerLink]='route.link' class='menu-item__link'>{{route.name}}</a>
+          <a (click)='scrollTop()' [routerLink]='route.link' class='menu-item__link'>{{route.name}}</a>
         </li>
       </ul>
     </div>

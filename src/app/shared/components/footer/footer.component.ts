@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterData } from '../../../core/interfaces';
+import { AdditionalService } from '../../../core/services/additional.service';
 
 @Component({
   selector: 'app-footer',
@@ -30,7 +31,10 @@ export class FooterComponent {
     }
   ];
 
+  constructor(private additionalService: AdditionalService) {
+  }
+
   public scrollTop() {
-    scroll({ top: 0 });
+    this.additionalService.scrollTop()
   }
 }

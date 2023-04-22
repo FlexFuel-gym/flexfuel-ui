@@ -9,6 +9,7 @@
     "build:prod": "ng build --configuration=prod",
     "watch": "ng build --watch --configuration dev",
     "test": "ng test",
+    "test:code-coverage": "ng test --code-coverage",
     "deploy": "npm run build:prod && firebase deploy"
   },
   "private": true,
@@ -25,6 +26,7 @@
     "ng-select": "^1.0.2",
     "ngx-pagination": "^6.0.3",
     "ngx-smart-modal": "^7.4.1",
+    "ngx-toastr": "^16.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

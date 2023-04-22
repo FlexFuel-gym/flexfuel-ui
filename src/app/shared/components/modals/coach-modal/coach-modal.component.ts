@@ -1,7 +1,8 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ButtonData, CoachData } from '../../../../core/interfaces';
+import { ButtonData, CoachData, RegisterToCoachResponse, Response } from '../../../../core/interfaces';
 import { CoachesService } from '../../../../core/services/coaches.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-coach-modal',
@@ -17,7 +18,7 @@ export class CoachModalComponent implements OnInit, OnChanges {
     type: 'blue'
   };
 
-  constructor(private coachesService: CoachesService) {
+  constructor(private coachesService: CoachesService, private toastrService: ToastrService) {
   }
 
   ngOnInit() {
@@ -43,6 +44,13 @@ export class CoachModalComponent implements OnInit, OnChanges {
       return;
     }
 
-    this.coachesService.registerToCoach(this.coachData.id, this.coachForm.value);
+    this.coachesService.registerToCoachRequest(this.coachData.id, this.coachForm.value).subscribe({
+      next: (response: Response<RegisterToCoachResponse>) => {
+        if (response.success) {
+          const customer = response.data.customer;
+          this.toastrService.success(`${customer.fullName}, ви успішно записались на ${customer.periodOfTime}, до Вас найблищим часом зателефонує наш тренер`, 'Успішно заброньовано!');
+        }
+      }
+    });
   }
 }

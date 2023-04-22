@@ -13,15 +13,15 @@ import { ProductsService } from '../../core/services/products.service';
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent implements OnInit, OnDestroy {
+  public productData: Product;
+  public productId: string;
   public buttonData: ButtonData = {
     text: 'Замовити',
     type: 'blue',
     size: 'medium'
   };
-  public productData: Product;
-  public productId: string;
 
-  private paramsSub: Subscription;
+  private paramsSubscription: Subscription;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,7 +31,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.paramsSub = this.activatedRoute.params.subscribe({
+    this.paramsSubscription = this.activatedRoute.params.subscribe({
       next: (params: Params) => {
         this.productId = params['id'];
 
@@ -44,11 +44,11 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  public onClick() {
-    this.ngxSmartModalService.create(MODALS.BUY, BuyModalComponent).open();
+  ngOnDestroy() {
+    this.paramsSubscription.unsubscribe();
   }
 
-  ngOnDestroy() {
-    this.paramsSub.unsubscribe();
+  public onClick() {
+    this.ngxSmartModalService.create(MODALS.BUY, BuyModalComponent).open();
   }
 }
