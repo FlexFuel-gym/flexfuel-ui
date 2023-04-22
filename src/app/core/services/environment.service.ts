@@ -6,7 +6,7 @@ import { environment } from '../../../environments/environment.qa';
   providedIn: 'root'
 })
 export class EnvironmentService {
-  public environment: Environment;
+  public readonly environment: Environment;
 
   constructor() {
     this.environment = environment;

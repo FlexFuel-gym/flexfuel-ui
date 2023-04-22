@@ -12,6 +12,8 @@ import {
 import { NovaPoshtaService } from '../../../../core/services/nova-poshta.service';
 import { DELIVERY_COMPANIES } from '../../../../core/enums';
 import { ProductsService } from '../../../../core/services/products.service';
+import { NgxSmartModalService } from 'ngx-smart-modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-buy-modal',
@@ -40,7 +42,9 @@ export class BuyModalComponent implements OnInit {
 
   constructor(
     private novaPoshtaService: NovaPoshtaService,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private modalService: NgxSmartModalService,
+    private toastrService: ToastrService
   ) {
   }
 
@@ -76,6 +80,8 @@ export class BuyModalComponent implements OnInit {
         this.deliveryDepartments = deliveryDepartments;
       }
     });
+
+    this.novaPoshtaService.getDeliveryAddresses('');
   }
 
   /**
@@ -85,11 +91,11 @@ export class BuyModalComponent implements OnInit {
    */
   public getDeliveryAddresses(event: { term: string, items: any[] } | undefined) {
     if (event == null && this.deliveryForm.get('deliveryZIP')?.value == null) {
-      this.novaPoshtaService.cityName = '';
+      this.novaPoshtaService.getDeliveryAddresses('');
     }
 
     if (event?.term) {
-      this.novaPoshtaService.cityName = event?.term;
+      this.novaPoshtaService.getDeliveryAddresses(event?.term);
     }
   }
 
@@ -110,7 +116,11 @@ export class BuyModalComponent implements OnInit {
 
     this.productsService.buyProduct(this.productId, customerData).subscribe({
       next: (response: Response<BuyProduct>) => {
-        this.onOrder.emit(response.data);
+        this.onOrder.emit(response);
+        const customer = response.data.customer;
+
+        this.modalService.closeAll();
+        this.toastrService.success(`${customer.fullName}, Ваш заказ оформлено, ми зателефонуємо до Вас найближчим часом!`, 'Успішно замовлено!');
       }
     });
   }

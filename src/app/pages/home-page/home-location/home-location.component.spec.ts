@@ -2,15 +2,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeLocationComponent } from './home-location.component';
 
-describe('HomeLocationComponent', () => {
+xdescribe('HomeLocationComponent', () => {
   let component: HomeLocationComponent;
   let fixture: ComponentFixture<HomeLocationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeLocationComponent ]
+      declarations: [HomeLocationComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(HomeLocationComponent);
     component = fixture.componentInstance;

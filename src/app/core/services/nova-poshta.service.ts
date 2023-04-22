@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { EnvironmentService } from './environment.service';
 import { CityInfo, Department, NovaPoshtaResponse, Settlements } from '../interfaces';
 
 @Injectable({
@@ -13,25 +14,11 @@ export class NovaPoshtaService {
 
   private readonly COUNT_DELIVERY_ADDRESSES: number = 50;
   private readonly NOVA_POSHTA_API_KEY = '2344a6f87ed19f2b6b7e2cb0a8ed1245';
-  private cityName$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  constructor(private http: HttpClient) {
-    this.cityName$.subscribe({
-      next: (cityName: string) => {
-        this.getDeliveryAddresses(cityName);
-      }
-    });
+  constructor(private http: HttpClient, private environmentService: EnvironmentService) {
   }
 
-  public get cityName(): string {
-    return this.cityName$.getValue();
-  }
-
-  public set cityName(cityName: string) {
-    this.cityName$.next(cityName);
-  }
-
-  public getDeliveryAddresses(cityName: string) {
+  public getDeliveryAddresses(cityName: string): void {
     this.getDeliveryAddressesRequest(cityName).subscribe({
       next: (response: NovaPoshtaResponse<CityInfo[]>) => {
         this.deliveryAddresses$.next(response.data);
@@ -45,7 +32,7 @@ export class NovaPoshtaService {
    *   write it to "deliveryDepartments$" observable. This is 1 way to get all
    *   departments in "NOVA POSHTA" API.
    */
-  public getDeliveryDepartments(ZIPCode: string) {
+  public getDeliveryDepartments(ZIPCode: string): void {
     this.getDeliveryCityIdRequest(ZIPCode).subscribe({
       next: (response: NovaPoshtaResponse<Settlements[]>) => {
         this.deliveryCityRef = response.data[0].Addresses[0].DeliveryCity;
@@ -60,7 +47,7 @@ export class NovaPoshtaService {
   }
 
   private getDeliveryAddressesRequest(cityName: string = ''): Observable<NovaPoshtaResponse<CityInfo[]>> {
-    return this.http.post<NovaPoshtaResponse<CityInfo[]>>(`https://api.novaposhta.ua/v2.0/json/`, {
+    return this.http.post<NovaPoshtaResponse<CityInfo[]>>(this.environmentService.environment.novaposhtaUrl, {
       apiKey: this.NOVA_POSHTA_API_KEY,
       modelName: 'Address',
       calledMethod: 'getSettlements',
@@ -73,7 +60,7 @@ export class NovaPoshtaService {
   }
 
   private getDeliveryDepartmentsRequest(cityRef: string): Observable<NovaPoshtaResponse<Department[]>> {
-    return this.http.post<NovaPoshtaResponse<Department[]>>(`https://api.novaposhta.ua/v2.0/json/`, {
+    return this.http.post<NovaPoshtaResponse<Department[]>>(this.environmentService.environment.novaposhtaUrl, {
       apiKey: this.NOVA_POSHTA_API_KEY,
       modelName: 'Address',
       calledMethod: 'getWarehouses',
@@ -84,7 +71,7 @@ export class NovaPoshtaService {
   }
 
   private getDeliveryCityIdRequest(ZIPCode: string): Observable<NovaPoshtaResponse<Settlements[]>> {
-    return this.http.post<NovaPoshtaResponse<Settlements[]>>(`https://api.novaposhta.ua/v2.0/json/`, {
+    return this.http.post<NovaPoshtaResponse<Settlements[]>>(this.environmentService.environment.novaposhtaUrl, {
       apiKey: this.NOVA_POSHTA_API_KEY,
       modelName: 'Address',
       calledMethod: 'searchSettlements',

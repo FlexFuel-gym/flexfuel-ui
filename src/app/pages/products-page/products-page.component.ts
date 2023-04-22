@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pagination, Product, ProductsResponse, Response } from '../../core/interfaces';
 import { ProductsService } from '../../core/services/products.service';
+import { AdditionalService } from '../../core/services/additional.service';
 
 @Component({
   selector: 'app-products-page',
@@ -13,12 +14,17 @@ export class ProductsPageComponent implements OnInit {
 
   private currentPage: number = 1;
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService, private additionalService: AdditionalService) {
   }
 
   ngOnInit() {
-    this.productsService.getProducts(this.currentPage).subscribe({
+    this.getProducts();
+  }
+
+  public getProducts(page: number = this.currentPage) {
+    this.productsService.getProducts(page).subscribe({
       next: (response: Response<ProductsResponse>) => {
+        this.currentPage = response.data.pagination.currentPage;
         this.products = response.data.products;
         this.pagination = response.data.pagination;
       }
@@ -26,13 +32,7 @@ export class ProductsPageComponent implements OnInit {
   }
 
   public onPageChange(page: number) {
-    this.currentPage = page;
-
-    this.productsService.getProducts(this.currentPage).subscribe({
-      next: (response: Response<ProductsResponse>) => {
-        this.products = response.data.products;
-        this.pagination = response.data.pagination;
-      }
-    });
+    this.getProducts(page);
+    this.additionalService.scrollTop();
   }
 }

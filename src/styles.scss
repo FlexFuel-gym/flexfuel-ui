@@ -2,6 +2,7 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import "ngx-smart-modal/ngx-smart-modal";
 @import "app/app.component";
+@import 'ngx-toastr/toastr';
 @import "mixins";
 
 *, *::before, *::after {
@@ -181,3 +182,21 @@ pagination-controls {
 }
 
 /*** NGX-PAGINATION **/
+
+
+/*** NGX-TOASTR **/
+
+.toast-title {
+  font-size: 2rem;
+  padding-bottom: 5px;
+}
+
+.toast-message {
+  font-size: 1.6rem;
+}
+
+.toast-container .ngx-toastr {
+  width: 400px;
+}
+
+/*** NGX-TOASTR **/
