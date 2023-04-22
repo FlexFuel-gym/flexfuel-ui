@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   ButtonData,
   BuyProduct,
@@ -8,10 +8,10 @@ import {
   DeliveryCompany,
   Department, Product,
   Response
-} from "../../../interfaces";
-import {NovaPoshtaService} from "../../../services/nova-poshta.service";
-import {DELIVERY_COMPANIES} from "../../../enums";
-import {ProductsService} from "../../../services/products.service";
+} from '../../../../core/interfaces';
+import { NovaPoshtaService } from '../../../../core/services/nova-poshta.service';
+import { DELIVERY_COMPANIES } from '../../../../core/enums';
+import { ProductsService } from '../../../../core/services/products.service';
 
 @Component({
   selector: 'app-buy-modal',
@@ -22,17 +22,17 @@ export class BuyModalComponent implements OnInit {
   @Input() productData: Product;
   @Output() onOrder = new EventEmitter()
 
-  deliveryForm: FormGroup;
-  deliveryAddresses: CityInfo[];
-  deliveryDepartments: Department[];
-  deliveryCompanies: DeliveryCompany[] = [
+  public deliveryForm: FormGroup;
+  public deliveryAddresses: CityInfo[];
+  public deliveryDepartments: Department[];
+  public deliveryCompanies: DeliveryCompany[] = [
     {
       name: 'Нова Пошта',
       value: DELIVERY_COMPANIES.NOVA_POSHTA
     }
-  ]
+  ];
 
-  buttonData: ButtonData = {
+  public buttonData: ButtonData = {
     text: 'Оформити замовлення',
     size: 'small',
     type: 'blue'
@@ -60,34 +60,22 @@ export class BuyModalComponent implements OnInit {
       ]),
       deliveryWarehouseId: new FormControl(undefined, [
         Validators.required
-      ]),
-    })
+      ])
+    });
 
-    this.deliveryForm.controls['deliveryZIP'].valueChanges.subscribe({
-      next: (deliveryAddress) => {
-        this.novaPoshtaService.deliveryDepartments$.next([]);
-
-        if (deliveryAddress) {
-          this.novaPoshtaService.getDeliveryDepartments(deliveryAddress)
-        } else {
-          this.novaPoshtaService.getDeliveryAddresses('')
-        }
-
-        this.deliveryForm.get('deliveryWarehouseId')?.reset()
-      }
-    })
+    this.detectDeliveryZIPChanges();
 
     this.novaPoshtaService.deliveryAddresses$.subscribe({
       next: (deliveryAddresses: CityInfo[]) => {
-        this.deliveryAddresses = deliveryAddresses
+        this.deliveryAddresses = deliveryAddresses;
       }
-    })
+    });
 
     this.novaPoshtaService.deliveryDepartments$.subscribe({
       next: (deliveryDepartments: Department[]) => {
-        this.deliveryDepartments = deliveryDepartments
+        this.deliveryDepartments = deliveryDepartments;
       }
-    })
+    });
   }
 
   /**
@@ -95,8 +83,8 @@ export class BuyModalComponent implements OnInit {
    *   event returns "undefined". If event is "close" and "deliveryAddress" not selected
    *   return all addresses
    */
-  getDeliveryAddresses(event: { term: string, items: any[] } | undefined) {
-    if (event === undefined && this.deliveryForm.get('deliveryZIP')?.value === undefined) {
+  public getDeliveryAddresses(event: { term: string, items: any[] } | undefined) {
+    if (event == null && this.deliveryForm.get('deliveryZIP')?.value == null) {
       this.novaPoshtaService.cityName = '';
     }
 
@@ -105,12 +93,12 @@ export class BuyModalComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  public onSubmit() {
     if (this.deliveryForm.invalid) {
-      return
+      return;
     }
 
-    const {fullName, phoneNumber, deliveryCompany, deliveryWarehouseId} = this.deliveryForm.value;
+    const { fullName, phoneNumber, deliveryCompany, deliveryWarehouseId } = this.deliveryForm.value;
 
     const customerData: CustomerData = {
       fullName,
@@ -118,12 +106,28 @@ export class BuyModalComponent implements OnInit {
       deliveryCompany,
       deliveryCityRef: this.novaPoshtaService.deliveryCityRef,
       deliveryWarehouse: deliveryWarehouseId.split('/')[1]
-    }
+    };
 
     this.productsService.buyProduct(this.productData.id!, customerData).subscribe({
       next: (response: Response<BuyProduct>) => {
-        this.onOrder.emit(response.data)
+        this.onOrder.emit(response.data);
       }
-    })
+    });
+  }
+
+  private detectDeliveryZIPChanges() {
+    this.deliveryForm.controls['deliveryZIP'].valueChanges.subscribe({
+      next: (deliveryAddress) => {
+        this.novaPoshtaService.deliveryDepartments$.next([]);
+
+        if (deliveryAddress) {
+          this.novaPoshtaService.getDeliveryDepartments(deliveryAddress);
+        } else {
+          this.novaPoshtaService.getDeliveryAddresses('');
+        }
+
+        this.deliveryForm.get('deliveryWarehouseId')?.reset();
+      }
+    });
   }
 }

@@ -1,6 +1,7 @@
-import {Component, Input, OnChanges, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ButtonData, CoachData} from "../../../interfaces";
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ButtonData, CoachData } from '../../../../core/interfaces';
+import { CoachesService } from '../../../../core/services/coaches.service';
 
 @Component({
   selector: 'app-coach-modal',
@@ -8,12 +9,15 @@ import {ButtonData, CoachData} from "../../../interfaces";
   styleUrls: ['./coach-modal.component.scss']
 })
 export class CoachModalComponent implements OnInit, OnChanges {
-  @Input() coachData: CoachData;
-  coachForm: FormGroup;
-  buttonData: ButtonData = {
+  @Input() public coachData: CoachData;
+  public coachForm: FormGroup;
+  public buttonData: ButtonData = {
     text: 'Записатись',
-    size: "wide",
-    type: "blue"
+    size: 'wide',
+    type: 'blue'
+  };
+
+  constructor(private coachesService: CoachesService) {
   }
 
   ngOnInit() {
@@ -24,21 +28,21 @@ export class CoachModalComponent implements OnInit, OnChanges {
       phoneNumber: new FormControl(undefined, [
         Validators.required
       ]),
-      schedule: new FormControl(undefined, [
+      periodOfTime: new FormControl(undefined, [
         Validators.required
       ])
-    })
+    });
   }
 
   ngOnChanges() {
-    this.coachForm?.get('schedule')?.reset()
+    this.coachForm?.get('periodOfTime')?.reset();
   }
 
-  onSubmit() {
+  public onSubmit() {
     if (this.coachForm.invalid) {
-      return
+      return;
     }
 
-    console.log(this.coachForm.value)
+    this.coachesService.registerToCoach(this.coachData.id, this.coachForm.value);
   }
 }

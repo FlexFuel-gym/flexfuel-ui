@@ -1,24 +1,24 @@
-<main class="main">
-  <div class="coaches">
-    <div class="coaches-wrapper">
-      <div class="coaches-content">
-        <h1 class="coaches-content__title">Тренери</h1>
-        <ul *ngIf="coaches.length > 0" class="coaches-content__list">
-          <li *ngFor="let coach of coaches" class="coaches-content__list-item coach">
-            <div class="coach-content">
-              <div class="coach-content__image">
-                <img [src]="coach.image" alt="coach" class="coach-content__image-img">
+<main class='main'>
+  <div class='coaches'>
+    <div class='coaches-wrapper'>
+      <div class='coaches-content'>
+        <h1 class='coaches-content__title'>Тренери</h1>
+        <ul *ngIf='coaches.length > 0' class='coaches-content__list'>
+          <li *ngFor='let coach of coaches' class='coaches-content__list-item coach'>
+            <div class='coach-content'>
+              <div class='coach-content__image'>
+                <img [src]='coach.image' alt='coach' class='coach-content__image-img'>
               </div>
-              <div class="coach-content__info">
-                <h2 class="coach-content__info-name">{{coach.fullName}}</h2>
-                <p class="coach-content__info-description">{{coach.description}}</p>
+              <div class='coach-content__info'>
+                <h2 class='coach-content__info-name'>{{coach.fullName}}</h2>
+                <p class='coach-content__info-description'>{{coach.description}}</p>
               </div>
-              <div class="coach-content__schedule">
-                <h3 class="coach-content__schedule-title">Робочі години:</h3>
+              <div class='coach-content__schedule'>
+                <h3 class='coach-content__schedule-title'>Робочі години:</h3>
                 <span
-                  class="coach-content__schedule-period-of-time">{{coach.schedule | coachSchedule}}</span>
+                  class='coach-content__schedule-period-of-time'>{{coach.schedule | coachSchedule}}</span>
               </div>
-              <app-button (click)="openCoachModal(coach.id)" [buttonData]="buttonData"></app-button>
+              <app-button (click)='openCoachModal(coach.id)' [buttonData]='buttonData'></app-button>
             </div>
           </li>
         </ul>
@@ -27,4 +27,4 @@
   </div>
 </main>
 
-<app-coach-modal [coachData]="modalCoachData"></app-coach-modal>
+<app-coach-modal [coachData]='modalCoachData'></app-coach-modal>

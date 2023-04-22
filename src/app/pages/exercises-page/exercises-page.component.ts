@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Exercises} from "../../shared/interfaces";
+import { Component } from '@angular/core';
+import { Exercises } from '../../core/interfaces';
 
 @Component({
   selector: 'app-exercises-page',
@@ -7,7 +7,7 @@ import {Exercises} from "../../shared/interfaces";
   styleUrls: ['./exercises-page.component.scss']
 })
 export class ExercisesPageComponent {
-  exercises: Exercises[] = [
+  public exercises: Exercises[] = [
     {
       image: '../../../assets/images/exercise-1.png',
       title: 'Присідання',
@@ -16,12 +16,13 @@ export class ExercisesPageComponent {
     {
       image: '../../../assets/images/exercise-2.png',
       title: 'Віджимання від підлоги',
-      description: "Ця вправа допоможе зміцнити м'язи грудей, трицепсів та плечей. Лягте на підлогу, покладіть долоні на підлогу біля плечей, підніміть тіло, опустіться вниз,  потім підніміться назад до стартової позиції. Повторіть вправу 10-15 разів."
+      description: 'Ця вправа допоможе зміцнити м\'язи грудей, трицепсів та плечей. Лягте на підлогу, покладіть долоні на підлогу біля плечей, підніміть тіло, опустіться вниз,  потім підніміться назад до стартової позиції. Повторіть вправу 10-15 разів.'
     },
     {
       image: '../../../assets/images/exercise-3.png',
       title: 'Планка',
       description: 'Це вправа, яка допоможе зміцнити корпус та розвинути стійкість. Почніть на всіх чотирьох, потім опустіться на лікті, так щоб вони були під плечем. Розтягніть ноги назад, так щоб вони були паралельні землі, і затримайте цю позицію на 30-60 секунд.'
-    },
+    }
   ];
 }
+

@@ -84,8 +84,8 @@ export interface RouterData {
 
 export interface ButtonData {
   text: string;
-  size: 'small' | 'medium' | 'large' | 'wide',
-  type: 'blue' | 'blue-with-border',
+  size: 'small' | 'medium' | 'large' | 'wide';
+  type: 'blue' | 'blue-with-border';
 }
 
 export interface Environment {
@@ -94,7 +94,7 @@ export interface Environment {
 }
 
 export interface CoachResponse {
-  coaches: CoachData[]
+  coaches: CoachData[];
 }
 
 export interface CoachData {
@@ -102,7 +102,7 @@ export interface CoachData {
   image: string;
   fullName: string;
   description: string;
-  pricePerMonth: number;
+  pricePerLesson: number;
   schedule: CoachSchedule[];
 }
 
@@ -244,23 +244,42 @@ export interface Schedule {
 }
 
 export interface Settlements {
-  TotalCount: number
-  Addresses: Address[]
+  TotalCount: number;
+  Addresses: Address[];
 }
 
 export interface Address {
-  Present: string
-  Warehouses: number
-  MainDescription: string
-  Area: string
-  Region: string
-  SettlementTypeCode: string
-  Ref: string
-  DeliveryCity: string
-  AddressDeliveryAllowed: boolean
-  StreetsAvailability: boolean
-  ParentRegionTypes: string
-  ParentRegionCode: string
-  RegionTypes: string
-  RegionTypesCode: string
+  Present: string;
+  Warehouses: number;
+  MainDescription: string;
+  Area: string;
+  Region: string;
+  SettlementTypeCode: string;
+  Ref: string;
+  DeliveryCity: string;
+  AddressDeliveryAllowed: boolean;
+  StreetsAvailability: boolean;
+  ParentRegionTypes: string;
+  ParentRegionCode: string;
+  RegionTypes: string;
+  RegionTypesCode: string;
+}
+
+export interface CoachOrderResponse {
+  id: string;
+  customerId: string;
+  coachId: string;
+}
+
+export interface CustomerOrderResponse {
+  id: string;
+  date: string;
+  fullName: string;
+  phoneNumber: string;
+  periodOfTime: string;
+}
+
+export interface RegisterToCoachResponse {
+  customer: CustomerOrderResponse;
+  order: CoachOrderResponse;
 }

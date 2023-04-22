@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
   HttpInterceptor
 } from '@angular/common/http';
-import {finalize} from 'rxjs/operators';
-import {LoadingService} from "../services/loading.service";
+import { finalize } from 'rxjs/operators';
+import { LoadingService } from '../../core/services/loading.service';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {

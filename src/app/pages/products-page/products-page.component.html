@@ -1,22 +1,22 @@
-<main class="main">
-  <section class="shop">
-    <div class="shop-wrapper">
-      <div class="shop-content">
-        <h1 class="shop-content__title">Магазин</h1>
-        <ul *ngIf="products.length > 0" class="shop-content__list products">
-          <li *ngFor="let product of products | paginate:pagination" class="products-item product">
-            <div class="product-content">
-              <a [routerLink]="'/products/' + product.id" class="product-content__photo">
-                <img [src]="product.images[0]" alt="product" class="product-content__photo-image">
+<main class='main'>
+  <section class='shop'>
+    <div class='shop-wrapper'>
+      <div class='shop-content'>
+        <h1 class='shop-content__title'>Магазин</h1>
+        <ul *ngIf='products.length > 0' class='shop-content__list products'>
+          <li *ngFor='let product of products | paginate:pagination' class='products-item product'>
+            <div class='product-content'>
+              <a [routerLink]="'/products/' + product.id" class='product-content__photo'>
+                <img [src]='product.images[0]' alt='product' class='product-content__photo-image'>
               </a>
-              <div class="product-content__info">
-                <a [routerLink]="'/products/' + product.id" class="product-content__info-name">{{product.name}}</a>
-                <span class="product-content__info-price">{{product.price | currency:'USD'}}</span>
+              <div class='product-content__info'>
+                <a [routerLink]="'/products/' + product.id" class='product-content__info-name'>{{product.name}}</a>
+                <span class='product-content__info-price'>{{product.price | currency:'USD'}}</span>
               </div>
             </div>
           </li>
         </ul>
-        <pagination-controls (pageChange)="onPageChange($event)" *ngIf="products.length > 0"></pagination-controls>
+        <pagination-controls (pageChange)='onPageChange($event)' *ngIf='products.length > 0'></pagination-controls>
       </div>
     </div>
   </section>

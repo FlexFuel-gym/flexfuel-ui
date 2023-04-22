@@ -6,3 +6,4 @@ export enum MODALS {
 export enum DELIVERY_COMPANIES {
   NOVA_POSHTA = 'NOVA_POSHTA'
 }
+
