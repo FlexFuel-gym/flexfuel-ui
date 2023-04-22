@@ -48,5 +48,14 @@
   }
 }
 
-.menu-image {
+@media (max-width: 768px) {
+  .menu {
+    right: 25px;
+    bottom: 25px;
+
+    &-image {
+      width: 75px;
+      height: 75px;
+    }
+  }
 }
