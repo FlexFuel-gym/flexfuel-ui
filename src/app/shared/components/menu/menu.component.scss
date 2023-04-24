@@ -8,16 +8,10 @@
   right: 50px;
   bottom: 50px;
 
-  &-nav {
-  }
-
   &-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-    &__item {
-    }
   }
 
   &-image {
@@ -41,12 +35,20 @@
     background-color: var(--button-blue-bg);
   }
 
-
   &-text {
     font-size: var(--default-size);
     line-height: 1.15em;
   }
 }
 
-.menu-image {
+@media (max-width: 768px) {
+  .menu {
+    right: 25px;
+    bottom: 25px;
+
+    &-image {
+      width: 75px;
+      height: 75px;
+    }
+  }
 }
