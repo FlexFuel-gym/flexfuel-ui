@@ -1,0 +1,44 @@
+.exercises {
+  &-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
+
+  &-content {
+    &__title {
+      font-weight: 400;
+      font-size: var(--title-size);
+      line-height: 1.15em;
+      color: var(--blue-color);
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+.item {
+  &-content {
+    &__name {
+      font-weight: 400;
+      font-size: var(--second-size);
+      line-height: 1.15em;
+      color: var(--blue-color);
+      padding-bottom: 5px;
+    }
+
+    &__description {
+      font-weight: 400;
+      font-size: var(--default-size);
+      line-height: 20px;
+      color: var(--white-color);
+    }
+  }
+}

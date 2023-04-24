@@ -1,0 +1,83 @@
+<div class='training'>
+  <div class='training-wrapper'>
+    <div class='training-content'>
+      <h2 class='training-content__title'>Тренування</h2>
+      <div *ngIf='exercises.length > 0; else noExercises' class='training-content__flexbox'>
+        <div class='training-content__flexbox-exercises exercises'>
+          <div class='exercises-content'>
+            <div class='exercises-content__now now'>
+              <div class='now-content'>
+                <h3 class='now-content__title'>ЗАРАЗ</h3>
+                <ul class='now-content__exercises'>
+                  <li class='now-content__exercises-item exercise active'>
+                    <span class='exercise-text'>{{exercises[0].name | uppercase}} ({{exercises[0] | exercise}})</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='exercises-content__next next'>
+              <div class='next-content'>
+                <h3 class='next-content__title'>ДАЛІ</h3>
+                <ul class='next-content__exercises'>
+                  <li
+                    *ngFor='let exercise of exercises | slice:1:6; let index = index'
+                    [ngStyle]='{ opacity: getOpacity(index) }'
+                    class='next-content__exercises-item exercise'
+                  >
+                    <span class='exercise-text'>
+                      {{exercise.name | uppercase}} ({{exercise | exercise}})
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='training-content__flexbox-timer timer'>
+          <div class='timer-content'>
+            <div class='timer-content__progress'>
+              <circle-progress
+                [percent]='percent'
+                [title]='timer'
+              ></circle-progress>
+              <span (click)='handleStartStopTimer()' class='timer-content__handle'>
+                <img [src]='playPauseImagePath' alt='play pause' class='timer-content__handle-img'>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noExercises>
+  <div class='training-content__flexbox-exercises exercises'>
+    <div class='exercises-content'>
+      <div class='exercises-content__now now'>
+        <div class='now-content'>
+          <h3 class='now-content__title'>ЗАРАЗ</h3>
+          <ul class='now-content__exercises'>
+            <li class='now-content__exercises-item exercise active'>
+              <span class='exercise-text'>{{'Відпочинок' | uppercase}} (Весь день)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class='exercises-content__next next'>
+        <div class='next-content'>
+          <h3 class='next-content__title'>ДАЛІ</h3>
+          <ul class='next-content__exercises'>
+            <li
+              *ngFor='let exercise of [0,0,0,0,0]; let index = index'
+              [ngStyle]='{ opacity: getOpacity(index) }'
+              class='next-content__exercises-item exercise'
+            >
+              <span class='exercise-text'>{{'Відпочинок' | uppercase}} (Весь день)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

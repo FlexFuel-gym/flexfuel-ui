@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.plan {
+  background-color: var(--blue-bg);
+  padding: 28px;
+
+  &-wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__text {
+      font-weight: 700;
+      font-size: var(--title-size);
+      line-height: 1.15em;
+      color: var(--white-color);
+    }
+  }
+}

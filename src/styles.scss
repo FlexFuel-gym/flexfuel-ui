@@ -42,7 +42,9 @@ app-exercises-page,
 app-coaches-page,
 app-product-page,
 app-products-page,
-app-home-page {
+app-home-page,
+app-plan-exercises-page,
+app-plan-training-page {
   flex: 1 1 100%;
 }
 
@@ -64,11 +66,13 @@ a {
   --white-color: #FFFFFF;
   --black-color: #000000;
   --error-color: #ff2121;
+  --info-color: #ff2121;
 
   --button-black-color: #000000;
   --button-white-color: #FFFFFF;
   --button-blue-bg: #089CF5;
   --button-white-bg: #FFFFFF;
+  --button-black-bg: #000000;
 
   --main-bg: #171717;
   --white-bg: #FFFFFF;
@@ -77,6 +81,10 @@ a {
   --input-bg: #242424;
   --hover-select-bg: #414141;
   --black-color-bg: #000000;
+  --blue-bg: #089CF5;
+  --code-bg: #242424;
+  --exercise-bg: #292929;
+  --active-exercise-bg: #089CF5;
 
   --black-border-color: #000000;
   --black-border: 1px solid var(--black-border-color);
@@ -105,6 +113,10 @@ a {
   font-size: var(--small-size) !important;
   background-color: var(--modal-bg);
   padding: 30px;
+}
+
+.nsm-dialog-btn-close {
+  color: var(--white-color);
 }
 
 /*** NGX-SMART-MODAL **/

@@ -1,0 +1,19 @@
+<ngx-smart-modal identifier='planDetailsModal'>
+  <div class='modal'>
+    <div class='modal-wrapper'>
+      <div class='modal-content'>
+        <ul class='modal-content__list list'>
+          <li *ngFor='let option of options' class='list-item item'>
+            <h3 class='item-title'>{{option.title}}</h3>
+            <span class='item-description'>{{option.description}}</span>
+          </li>
+        </ul>
+        <app-button (click)='onPayPlanClick()' [buttonData]='buttonData'></app-button>
+        <span (click)='onActivatePlanClick()' class='modal-content__activate'>Купували на іншому пристрої? Введіть код та продовжуйте користуватись на цему!</span>
+      </div>
+    </div>
+  </div>
+</ngx-smart-modal>
+
+<app-buy-plan-modal></app-buy-plan-modal>
+<app-activate-plan-modal></app-activate-plan-modal>

@@ -57,6 +57,26 @@ export interface BuyProduct {
   order: Order;
 }
 
+export interface MonobankResponse {
+  transaction: Transaction;
+}
+
+export interface Transaction {
+  id: string;
+  time: number;
+  description: string;
+  comment?: string;
+  mcc: number;
+  originalMcc: number;
+  amount: number;
+  operationAmount: number;
+  currencyCode: number;
+  commissionRate: number;
+  cashbackAmount: number;
+  balance: number;
+  hold: boolean;
+}
+
 export interface CustomerData {
   id?: string;
   fullName: string;
@@ -85,7 +105,7 @@ export interface RouterData {
 export interface ButtonData {
   text: string;
   size: 'small' | 'medium' | 'large' | 'wide';
-  type: 'blue' | 'blue-with-border';
+  type: 'blue' | 'blue-with-border' | 'white';
 }
 
 export interface Environment {
@@ -283,4 +303,19 @@ export interface CustomerOrderResponse {
 export interface RegisterToCoachResponse {
   customer: CustomerOrderResponse;
   order: CoachOrderResponse;
+}
+
+export interface Exercise {
+  id: string;
+  name: string;
+  count?: number;
+  seconds?: number;
+}
+
+export interface ExerciseDescription {
+  id: string;
+  name: string;
+  description: string;
+  averageCountOrSeconds: number;
+  repeats: number;
 }
