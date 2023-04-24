@@ -1,0 +1,46 @@
+.modal {
+  &-content {
+    app-button {
+      display: block;
+      padding-bottom: 10px;
+    }
+
+    &__activate {
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      font-size: var(--small-size);
+      line-height: 1.15em;
+      color: var(--blue-color);
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.item {
+  &-title {
+    font-weight: 400;
+    font-size: var(--second-size);
+    line-height: 1.15em;
+    color: var(--blue-color);
+    padding-bottom: 5px;
+  }
+
+  &-description {
+    font-weight: 400;
+    font-size: var(--default-size);
+    line-height: 1.15em;
+    color: var(--white-color);
+  }
+}

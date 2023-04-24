@@ -8,16 +8,16 @@ import { AdditionalService } from '../../core/services/additional.service';
   templateUrl: './products-page.component.html',
   styleUrls: ['./products-page.component.scss']
 })
-export class ProductsPageComponent implements OnInit {
+export class ProductsPageComponent {
   public products: Product[] = [];
   public pagination: Pagination;
 
   private currentPage: number = 1;
 
-  constructor(private productsService: ProductsService, private additionalService: AdditionalService) {
-  }
-
-  ngOnInit() {
+  constructor(
+    private productsService: ProductsService,
+    private additionalService: AdditionalService
+  ) {
     this.getProducts();
   }
 

@@ -18,6 +18,10 @@ export class FooterComponent {
       link: 'exercises'
     },
     {
+      name: 'Тренувальні вправи+',
+      link: 'plan/exercises'
+    },
+    {
       name: 'Тренери',
       link: 'coaches'
     },
@@ -35,6 +39,6 @@ export class FooterComponent {
   }
 
   public scrollTop() {
-    this.additionalService.scrollTop()
+    this.additionalService.scrollTop();
   }
 }

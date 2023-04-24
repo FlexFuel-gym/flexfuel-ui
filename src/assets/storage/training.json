@@ -1,0 +1,614 @@
+[
+  [],
+  [
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    }
+  ],
+  [
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    }
+  ],
+  [
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    }
+  ],
+  [
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    }
+  ],
+  [
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "SQUATTING",
+      "name": "Присідання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PUSH_UPS",
+      "name": "Віджимання",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "PLANK",
+      "name": "Планка",
+      "seconds": 30
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    },
+    {
+      "id": "TWISTING",
+      "name": "Скручування",
+      "count": 10
+    },
+    {
+      "id": "BREAK",
+      "name": "Перерва",
+      "seconds": 10
+    }
+  ],
+  []
+]

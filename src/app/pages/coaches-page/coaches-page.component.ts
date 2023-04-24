@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { ButtonData, CoachData, CoachResponse, Response } from '../../core/interfaces';
 import { CoachesService } from '../../core/services/coaches.service';
@@ -9,7 +9,7 @@ import { MODALS } from '../../core/enums';
   templateUrl: './coaches-page.component.html',
   styleUrls: ['./coaches-page.component.scss']
 })
-export class CoachesPageComponent implements OnInit {
+export class CoachesPageComponent {
   public modalCoachData: CoachData;
   public coaches: CoachData[] = [];
   public buttonData: ButtonData = {
@@ -22,13 +22,6 @@ export class CoachesPageComponent implements OnInit {
     private coachesService: CoachesService,
     private ngxSmartModalService: NgxSmartModalService
   ) {
-  }
-
-  ngOnInit(): void {
-    this.getCoaches();
-  }
-
-  public getCoaches(): void {
     this.coachesService.getCoachesRequest().subscribe({
       next: (response: Response<CoachResponse>) => {
         this.coaches = response.data.coaches;

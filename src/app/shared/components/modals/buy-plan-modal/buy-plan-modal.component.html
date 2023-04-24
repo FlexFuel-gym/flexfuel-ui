@@ -1,0 +1,32 @@
+<ngx-smart-modal identifier='buyPlanModal'>
+  <div class='modal'>
+    <div class='modal-wrapper'>
+      <div class='modal-content'>
+        <p class='modal-content__info'>
+          При поповненні банки на сумму від 10 грн підписка зараховується лише на 1 місяць.
+          Купити підписку одразу на кілька місяців НЕ МОЖНА!
+        </p>
+        <ul class='modal-content__list list'>
+          <li class='list-item item'>
+            <h3 class='item-title'>Крок 1</h3>
+            <span class='item-description'>
+              Перейдіть за посиланням
+              <a class='item-description__link' href='https://send.monobank.ua/jar/8MCVeegukq' target='_blank'>
+                https://send.monobank.ua/jar/8MCVeegukq
+              </a>
+              та поповніть банку на сумму 10 гривень з коментаром:
+            </span>
+            <span class='item-code'>
+              <span class='item-code__content'>{{planKey}}</span>
+            </span>
+          </li>
+          <li class='list-item item'>
+            <h3 class='item-title'>Крок 2</h3>
+            <span class='item-description'>Натисніть кнопку “Перевірити оплату”</span>
+          </li>
+        </ul>
+        <app-button (click)='checkPayment()' [buttonData]='buttonData'></app-button>
+      </div>
+    </div>
+  </div>
+</ngx-smart-modal>

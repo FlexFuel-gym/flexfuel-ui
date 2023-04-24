@@ -6,14 +6,46 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
 import { AboutUsPageComponent } from './pages/about-us-page/about-us-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CoachesPageComponent } from './pages/coaches-page/coaches-page.component';
+import { PlanExercisesPageComponent } from './pages/plan-exercises-page/plan-exercises-page.component';
+
+import { PlanBoughtGuard } from './core/guards/plan-bought.guard';
+import { PlanTrainingPageComponent } from './pages/plan-training-page/plan-training-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'exercises', component: ExercisesPageComponent },
-  { path: 'products', component: ProductsPageComponent },
-  { path: 'about-us', component: AboutUsPageComponent },
-  { path: 'products/:id', component: ProductPageComponent },
-  { path: 'coaches', component: CoachesPageComponent }
+  {
+    path: '',
+    component: HomePageComponent
+  },
+  {
+    path: 'exercises',
+    component: ExercisesPageComponent
+  },
+  {
+    path: 'products',
+    component: ProductsPageComponent
+  },
+  {
+    path: 'about-us',
+    component: AboutUsPageComponent
+  },
+  {
+    path: 'products/:id',
+    component: ProductPageComponent
+  },
+  {
+    path: 'coaches',
+    component: CoachesPageComponent
+  },
+  {
+    path: 'plan/exercises',
+    component: PlanExercisesPageComponent,
+    canActivate: [PlanBoughtGuard]
+  },
+  {
+    path: 'plan/training',
+    component: PlanTrainingPageComponent,
+    canActivate: [PlanBoughtGuard]
+  }
 ];
 
 @NgModule({

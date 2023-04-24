@@ -1,0 +1,22 @@
+<ngx-smart-modal identifier='activatePlanModal'>
+  <div class='modal'>
+    <div class='modal-wrapper'>
+      <div class='modal-content'>
+        <form [formGroup]='activePlanForm' class='modal-content__form form'>
+          <div class='form-content'>
+            <label class='form-content__label label'>
+              <span class='label-name'>Введіть ваш код:</span>
+              <input [formControlName]="'activationCode'" class='label-input' type='text'>
+            </label>
+          </div>
+          <app-button
+            (click)='onSubmit()'
+            [attr.aria-disabled]='activePlanForm.invalid'
+            [buttonData]='buttonData'
+            [disabled]='activePlanForm.invalid'
+          ></app-button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ngx-smart-modal>

@@ -1,0 +1,7 @@
+@import '../../../../../mixins';
+
+.label {
+  @include label;
+  display: block;
+  padding-bottom: 15px;
+}

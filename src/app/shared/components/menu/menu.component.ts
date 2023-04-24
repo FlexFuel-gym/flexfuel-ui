@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterData } from '../../../core/interfaces';
 import { AdditionalService } from '../../../core/services/additional.service';
+import { SubscriptionPlanService } from '../../../core/services/subscription-plan.service';
 
 @Component({
   selector: 'app-menu',
@@ -19,6 +20,10 @@ export class MenuComponent {
       link: 'exercises'
     },
     {
+      name: 'Тренувальні вправи+',
+      link: 'plan/exercises'
+    },
+    {
       name: 'Тренери',
       link: 'coaches'
     },
@@ -32,7 +37,9 @@ export class MenuComponent {
     }
   ];
 
-  constructor(private additionalService: AdditionalService) {
+  constructor(
+    private additionalService: AdditionalService
+  ) {
   }
 
   public handleMenuVisible() {
@@ -45,6 +52,6 @@ export class MenuComponent {
 
   public closeMenuAndScrollTop() {
     this.closeMenu();
-    this.additionalService.scrollTop()
+    this.additionalService.scrollTop();
   }
 }

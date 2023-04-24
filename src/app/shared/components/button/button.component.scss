@@ -26,6 +26,17 @@
     }
   }
 
+  &-white {
+    color: var(--black-color);
+    background: var(--button-white-bg);
+    transition: all .25s ease-in-out;
+
+    &:hover {
+      color: var(--white-color);
+      background-color: var(--button-black-bg);
+    }
+  }
+
   &.disabled {
     opacity: 0.75;
     pointer-events: none;
